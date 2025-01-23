@@ -1,0 +1,25 @@
+Open source - Open source is a model for creating and sharing software, or other intellectual property, that's open to the public.
+
+what is node js ?
+
+Node.js is like a tool that lets you run JavaScript on your computer, not just in a browser. It’s super useful for building fast, scalable apps, 
+especially for the web. Think of it as the engine that powers your favorite car but for running JavaScript everywhere.
+
+
+why are you used in node js?
+
+We use Node.js because it’s great for building fast, real-time, and scalable applications. Here are the main reasons:
+
+1. Fast Execution: Node.js uses the V8 engine (Google’s JavaScript engine), which makes it super quick for running code.
+2. Handles Many Users at Once: It’s non-blocking, meaning it can handle multiple tasks simultaneously without waiting for one to finish before starting another.
+3. Single Language for Backend: With Node.js, you can use JavaScript for both frontend and backend, making development simpler and more unified.
+4. Real-Time Applications: Perfect for chat apps, live streaming, or games because it handles updates instantly.
+5. Huge Community: Lots of libraries (via npm) make adding features like authentication or data storage much easier.
+
+Node js defination:
+
+The node.js interactive REPL terminal is like the poweshell or command propt terminal, or a bash erminal in linux. 
+it performs the following tasks- 
+
+ct+c,ct+d,.exit exit for termial.
+
