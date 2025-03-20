@@ -1,0 +1,95 @@
+<%- include("./partials/header")  %>
+
+<section class="featured">
+  <div class="container">
+    <% if (blog.length > 0) { %>
+      <div class="row">
+        <div class="col-12">
+          <article class="featured-post">
+            <div class="featured-post-content">
+              <div class="featured-post-author">
+                <img src="<%= blog[0].authorImage %>" alt="author" />
+                <p>By <span><%= blog[0].author %></span></p>
+              </div>
+              <a href="/singleBlog/<%= blog[0].id %>" class="featured-post-title" style="font-size: 2.5rem;">
+                <%= blog[0].content %> 
+              </a>
+              <ul class="featured-post-meta">
+                <li>
+                  <i class="fa fa-clock-o"></i>
+                  <%= blog[0].publishedDate %> - 3 min read
+                </li>
+              </ul>
+            </div>
+            <div class="featured-post-thumb">
+              <img src="<%= blog[0].image %>" alt="feature-post-thumb" style="width: 550px;" />
+            </div>
+          </article>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <% if (blog.length > 1) { %>
+        <div class="col-lg-8">
+          <div class="blog-section-title">
+            <h2>Articles</h2>
+            <p>View the latest news on Blogger</p>
+          </div>
+          
+          <% blog.slice(1).forEach((post)=> { %>
+            <article class="blog-post">
+              <div class="blog-post-thumb">
+                <img src="<%= post.image %>" alt="blog-thumb" />
+              </div>
+              <div class="blog-post-content">
+                <div class="blog-post-tag">
+                  <a href="category.html"><%= post.tag %></a>
+                </div>
+                <div class="blog-post-title">
+                  <a href="/singleBlog/<%= post.id %>"><%= post.content %></a>
+                </div>
+                <div class="blog-post-meta">
+                  <ul>
+                    <li>By <a href="about.html"><%= post.author %></a></li>
+                    <li><i class="fa fa-clock-o"></i> <%= post.publishedDate %> - 2 min</li>
+                  </ul>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                <a href="/singleBlog/<%= post.id %>" class="blog-post-action">
+                  Read more <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+            </article>
+          <% }) %>
+      
+          <div class="blog-post-pagination">
+            <nav aria-label="Page navigation example" class="nav-bg">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      <% } else { %>
+        <p>No additional blogs found.</p>
+      <% } %>
+      
+      
+     
+    </div>
+  </div>
+</section>
+
+<%- include("./partials/footer")  %>

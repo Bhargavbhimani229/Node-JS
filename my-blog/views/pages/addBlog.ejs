@@ -1,0 +1,47 @@
+<%- include("../partials/header") %>
+    <div class="container mt-5 w-50 p-5 border border-2">
+        <h2 class="text-center">Add a New Blog</h2>
+        <form action="/addBlog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Blog Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title" required>
+            </div>
+            <div class="mb-3">
+              <label for="title" class="form-label">Author</label>
+              <input type="text" class="form-control" id="author" name="author"  placeholder="Enter author title" required>
+          </div>
+          <div class="mb-3">
+            <label for="publishedDate" class="form-label">Published Date</label>
+            <input type="date" class="form-control" id="publishedDate" name="publishedDate" required />
+          </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Blog Content</label>
+                <textarea class="form-control" id="content" name="content" rows="5" placeholder="Write your blog content here..." required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Blog Image</label>
+                <input type="file" class="form-control" name="image" id="image">
+            </div>
+            <div class="mb-3">
+                <label for="authorImage" class="form-label">Author Image</label>
+                <input type="file" class="form-control" name="authorImage" id="authorImage">
+            </div>
+            <div class="mb-3">
+                <label for="tag" class="form-label">Blog Tag</label>
+                <input type="text" class="form-control" name="tag" id="tag">
+            </div>
+            <div class="mb-4">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category">
+                    <option selected>Select a category</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Health">Health</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Blog</button>
+        </form>
+    </div><br><br>
+    <%- include("../partials/footer") %>
+
