@@ -1,0 +1,12 @@
+<%- include("../partials/header") %>
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+  <div class="container-fluid py-5 ">
+    <h3>Singal Page</h3>
+    <img src="/<%= blogs.image %>" alt="<%= blogs.title %>" height="300px">
+    <h3 class=" fw-bold mt-2">Blog Title : <%= blogs.title %></h3>
+    <p class="col-md-8 fs-4"><%= blogs.description %></p> 
+    <br><p class="col-md-8 fs-4"><%= blogs.publishedDate %></p>
+    <a class="btn btn-primary btn-lg" type="button" href="/">Back to Home🏠</a>
+  </div>
+</div>
+<%- include("../partials/footer") %>

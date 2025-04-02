@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto mt-3">
+      <form method="post" action="" enctype="multipart/form-data">
+        <input type="hidden" value="<%= blog.image %>" name="old_image">
+        <h2><caption class="caption-top">👉 Edit Blog</caption></h2>
+        <div class="mb-3 mt-4">
+          <label class="form-label">Blog Title</label>
+          <input type="text" class="form-control" value="<%= blog.title %>" name="title" id="title" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Author</label>
+          <input type="text" class="form-control" value="<%= blog.author %>" name="author" id="author">
+        </div>
+        <label>Old Image</label>
+        <img src="/<%= blog.image %>" alt="<%= blog.title %>" width="200px">
+        <div class="mb-3">
+          <label  class="form-label">Blog Image</label>
+          <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Blog Description</label>
+          <textarea type="text" class="form-control" name="description"  id="description"><%= blog.description %></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="publishedDate" class="form-label">Published Date</label>
+          <input type="date" class="form-control" id="publishedDate" name="publishedDate" value="<%= blog.publishedDate %>" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

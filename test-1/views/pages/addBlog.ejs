@@ -1,0 +1,32 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto mt-3">
+      <form method="post" action="" enctype="multipart/form-data">
+        <h2><caption class="caption-top">👉 Add Blog</caption></h2>
+        <div class="mb-3 mt-4">
+          <label class="form-label">Blog Title</label>
+          <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Author</label>
+          <input type="text" class="form-control" name="author" id="author">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Blog Image</label>
+          <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Blog Description</label>
+          <textarea type="text" class="form-control" name="description" id="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="publishedDate" class="form-label">Published Date</label>
+          <input type="date" class="form-control" id="publishedDate" name="publishedDate" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
