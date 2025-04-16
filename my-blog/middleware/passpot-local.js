@@ -36,14 +36,14 @@ passport.userPassportAuth = (req,res,next) =>{
   if(!req.isAuthenticated()){
     return res.redirect("/login");
   }
-  return next();
+   next();
 }
 
 passport.userLocalsData = (req,res,next) => {
   if(req.isAuthenticated()){
     res.locals.user = req.user;
   }
-  return next();
+   next();
 }
 
 module.exports = passport;

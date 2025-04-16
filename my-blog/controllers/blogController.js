@@ -45,24 +45,26 @@ module.exports.singleBlog = async (req, res) => {
   }
 };
 
-module.exports.loginPage = (req,res) => {
-  return res.render("pages/login")
-}
-module.exports.registerPage = (req,res) =>{
+module.exports.loginPage = (req, res) => {
+  return res.render("pages/login");
+};
+module.exports.registerPage = (req, res) => {
   return res.render("pages/register");
-}
+};
 
-module.exports.createPost = async (req,res) =>{
-  let {password,confirmPassword} = req.body;
-  if(password === confirmPassword){
-    await userModel.create(req.body);
-    res.render("./pages/login",req.body);
+module.exports.createPost = async (req, res) => {
+  try {
+    let { username, email, password, confirmPassword } = req.body;
+    console.log(req.body);
+    if (password === confirmPassword) {
+      let user = await userModel.create({ username, email, password , confirmPassword });
+      console.log("User Created:", user);
+     return res.render("./pages/login");
+    } else {
+      console.log("Password & Confirm Password should be the same!");
+     return res.render("./pages/register");
+    }
+  } catch (error) {
+    console.error("Error creating user:", error);
   }
-  else
-  {
-    console.log("Password & Confirm Password should be same!");
-    res.render("./pages/register")   
-  }
-}
-
-
+};

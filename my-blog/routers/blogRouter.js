@@ -7,7 +7,7 @@ const blogRouter = Router();
 blogRouter.get("/login",blogController.loginPage);
 blogRouter.get("/registerPage",blogController.registerPage);
 blogRouter.post("/registerPage",blogController.createPost);
-blogRouter.post("/login",passport.authenticate("local",{failureRedirect:"/login", successRedirect:"/index"}))
+blogRouter.post("/login",passport.authenticate("local",{failureRedirect:"/login", successRedirect:"/"}))
 blogRouter.use(passport.userPassportAuth);
 
 blogRouter.get('/',blogController.homePage);
